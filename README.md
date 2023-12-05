@@ -10,4 +10,8 @@ This is a desktop application that allows users to generate functional qrcode im
 - Segno :  Translating links to QR code 
 
 
-
+### How to run this on your local machine : 
+Clone the project :
+```
+git clone https//github.com/philipObiri/qr-code-generator.git
+```
