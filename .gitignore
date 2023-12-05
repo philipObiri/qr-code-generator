@@ -1,0 +1,9 @@
+build/
+
+dist/
+
+venv/
+
+qrcode_generator.spec
+
+
