@@ -7,8 +7,10 @@ import segno  # for dynamically creating the qrcode
 def generate():
     link_name = name_entry.get()
     link = link_entry.get()
-    if link_name:
-        print("Enter a link name")
+    if link_name == "":
+        message_label.config(
+            text="Please Enter Link Name", font=("EB Garamond,Arial, sans-serif", 12), fg="red", pady=10
+        )
     elif link != "":
         # Generate a filename with a png extension
         filename = link_name + ".png"
@@ -26,21 +28,21 @@ def generate():
         # Render the image in the tkinter window :
         canvas.create_window(200, 450, window=image_label)
         message_label.config(
-            text=f"QR Image Generated successfully for {link}",
+            text=f"QR Image Generated successfully!",
             font=("EB Garamond,Arial, sans-serif", 16),
             fg="green",
         )
 
     else:
         message_label.config(
-            text="Invalid Link", font=("EB Garamond,Arial, sans-serif", 16), fg="red"
+            text="Invalid Link, Kindly check the link and correct it", font=("EB Garamond,Arial, sans-serif", 12), fg="red", pady=10
         )
         # print("Invalid Link")
 
 
 window = Tk()
 window.title("Generate QR Code")
-window.geometry("400x600")
+window.geometry("450x600")
 window.resizable(False, False)
 canvas = Canvas(window, width=400, height=600)
 canvas.pack()
